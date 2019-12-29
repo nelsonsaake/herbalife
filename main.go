@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"os"
 
 	"github.com/rs/cors"
 )
@@ -78,7 +79,7 @@ func setupServerAndRun() {
 
 	port := ":8085"
 	server := http.Server{
-		Addr: port,
+		Addr: os.Getenv("PORT"),
 	}
 	fmt.Println("Serving at port ", port)
 
