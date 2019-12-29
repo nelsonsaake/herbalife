@@ -92,7 +92,8 @@ func setupServerAndRun() {
 	}
 	routecomments = append(routecomments, routecomment)
 
-	http.Handle("/products", c.Handler(http.HandlerFunc(allProducts)))
+	// http.Handle("/products", c.Handler(http.HandlerFunc(allProducts)))
+	http.Handle("/", c.Handler(http.HandlerFunc(allProducts)))
 	routecomment = RouteComment{
 		Route:   "/products",
 		Comment: "returns a list of all products in a presentation.",
