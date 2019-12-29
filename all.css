@@ -1,0 +1,41 @@
+div.search-area{
+    margin: 0;
+}
+
+div, td, th, header, footer{
+    font-family: cursive;
+    font-family: 'Abel', sans-serif;
+    word-spacing: 10px;
+    font-size: 13pt;
+}
+
+header, footer{
+    height: 10vh;
+    line-height: 10vh;
+    padding-left: 15px;
+}
+
+header{
+    background-image: url("green.jpg");
+    color: white;
+    margin-bottom: 20px;
+}
+
+footer{
+    background-color: lightgrey;
+    border-top: 2px solid silver;
+}
+
+.full{
+    min-height: 90vh;
+}
+
+#logo{
+    height: 50px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.herbalife{
+    font-size: 24px;
+}

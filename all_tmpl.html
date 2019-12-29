@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Herbalife Products (Ghana)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+
+<body>
+    <header>
+      <img src="/css/logo.png" alt="herbalife logo" id="logo">  
+      <span class="herbalife">Herbalife</span>
+    </header>
+    <div class="container">
+        <div class="panel panel-default full">
+            <div class="panel-heading">
+                <div class="search-area">
+                    <form class="form-inline" action="/search" method="GET" enctype="application/x-www-form-urlencoded">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <input type="search" class="form-control" name="search" id="search">
+                        <button type="submit" class="btn btn-success form-control">Search</button>
+                    </form>
+                </div>
+            </div>
+            <table class="panel-body table-striped">
+                <tr>
+                    <th>Products</th>
+                    <th>Suggested Selling Price </th>
+                </tr>
+                {{range .}}
+                <tr class="product">
+                    <td class="name">
+                        <!--
+                            <form action="/details" method="get">
+                                <input type="text" class="hidden" id="id" value={{.Id}}>
+                                <button type="submit"></button>
+                            </form>
+                        -->
+                        {{.ProductName}}
+                    </td>
+                    <td>GHC<span class="price">{{.SuggestedSellingPrice}}</span></td>
+                </tr>
+                {{end}}
+            </table>
+        </div>
+    </div>
+    <footer>
+        <span class="glyphicon glyphicon-envelope"></span> email: ghuywithissues@gmail.com
+    </footer>
+</body>
+</html>
