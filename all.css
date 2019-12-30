@@ -1,41 +1,33 @@
-div.search-area{
-    margin: 0;
+header{
+    padding: 15px;
+    color: white;
+    background-color: rgb(39, 66, 39);
+    border-bottom: 1px solid rgb(43, 94, 43);
+}
+
+.herbalife{
+    padding-bottom: 15px;
+    font-size: 28pt;
+}
+
+.search-area{
+    margin: 15px auto 15px auto;
 }
 
 div, td, th, header, footer{
-    font-family: cursive;
-    font-family: 'Abel', sans-serif;
+    font-family: "fantasy";
     word-spacing: 10px;
-    font-size: 13pt;
+    font-size: 16pt;
+    font-weight: normal;
 }
 
-header, footer{
-    height: 10vh;
-    line-height: 10vh;
-    padding-left: 15px;
-}
-
-header{
-    background-image: url("green.jpg");
-    color: white;
-    margin-bottom: 20px;
-}
 
 footer{
-    background-color: lightgrey;
-    border-top: 2px solid silver;
+    padding: 15px;
+    background-color: rgb(240,240,240);
+    border-top: 2px solid rgb(78,78,78);
 }
 
 .full{
     min-height: 90vh;
-}
-
-#logo{
-    height: 50px;
-    margin: auto;
-    padding-bottom: 10px;
-}
-
-.herbalife{
-    font-size: 24px;
 }

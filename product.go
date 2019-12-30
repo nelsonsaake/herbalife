@@ -33,7 +33,7 @@ func init() {
 //
 func precesion(n int, val float64) (res float64) {
 	exp := math.Pow10(n)
-	res = math.Round(val*exp) / exp
+	res = math.Ceil(val*exp) / exp
 	return
 }
 

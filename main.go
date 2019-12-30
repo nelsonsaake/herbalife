@@ -80,6 +80,7 @@ func setupServerAndRun() {
 	port := ":8085"
 	server := http.Server{
 		Addr: ":" + os.Getenv("PORT"),
+		// Addr: port,
 	}
 	fmt.Println("Serving at port ", port)
 

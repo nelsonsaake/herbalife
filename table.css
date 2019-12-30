@@ -1,16 +1,17 @@
 
 table{
-    margin-left: 15px;  
-    margin-top: 15px;
+    width: 100%;
+    border: 1px solid silver;
 }
 
 td,th{
-    padding: 10px 15px 10px 0;
+    padding: 15px;
+    border: 1px solid silver;
+    width: 50%;
 }
 
 th{
-    font-size: 16pt;
-    font-weight: 100;
+    font-size: 20pt;
 }
 
 tr{
@@ -18,13 +19,6 @@ tr{
     margin-bottom: 5px;
 }
 
-.product button{
-    background-color: rgba(0,0,0,0);
-    border: 0;
-    padding: 0;
-    margin: 0;
-}
-
 .price:hover{
-    font-size: 18pt;
+    font-size: 1.rem;
 }
