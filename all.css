@@ -6,8 +6,8 @@ header{
 }
 
 .herbalife{
-    padding-bottom: 15px;
-    font-size: 28pt;
+    font-size: 24pt;
+    /* padding: 15px; */
 }
 
 .search-area{
@@ -15,7 +15,7 @@ header{
 }
 
 div, td, th, header, footer{
-    font-family: "fantasy";
+    font-family: 'Montserrat', sans-serif;
     word-spacing: 10px;
     font-size: 16pt;
     font-weight: normal;
@@ -30,4 +30,8 @@ footer{
 
 .full{
     min-height: 90vh;
+}
+
+#btn{
+    margin: 5px 15px;
 }

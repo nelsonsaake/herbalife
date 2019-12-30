@@ -80,7 +80,9 @@ func setupServerAndRun() {
 	port := ":8085"
 	server := http.Server{
 		Addr: ":" + os.Getenv("PORT"),
-		// Addr: port,
+	}
+	serverlocal := http.Server{
+		Addr: port,
 	}
 	fmt.Println("Serving at port ", port)
 
@@ -116,6 +118,7 @@ func setupServerAndRun() {
 	}
 	routecomments = append(routecomments, routecomment)
 
+	go serverlocal.ListenAndServe()
 	server.ListenAndServe()
 }
 
