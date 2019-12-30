@@ -34,15 +34,6 @@ func GetRunData() RunData {
 	}
 }
 
-func index(writer http.ResponseWriter, request *http.Request) {
-	t, err := template.ParseFiles("index_tmpl.html")
-	if err != nil {
-		panic(err)
-	}
-	data := GetRunData()
-	t.Execute(writer, data)
-}
-
 func allProducts(writer http.ResponseWriter, request *http.Request) {
 	t, err := template.ParseFiles("all_tmpl.html")
 	if err != nil {
@@ -81,21 +72,16 @@ func setupServerAndRun() {
 	server := http.Server{
 		Addr: ":" + os.Getenv("PORT"),
 	}
-	serverlocal := http.Server{
-		Addr: port,
-	}
 	fmt.Println("Serving at port ", port)
 
 	c := cors.AllowAll()
 
-	// http.Handle("/", c.Handler(http.HandlerFunc(index)))
 	routecomment := RouteComment{
 		Route:   "/",
 		Comment: "Default route",
 	}
 	routecomments = append(routecomments, routecomment)
 
-	// http.Handle("/products", c.Handler(http.HandlerFunc(allProducts)))
 	http.Handle("/", c.Handler(http.HandlerFunc(allProducts)))
 	routecomment = RouteComment{
 		Route:   "/products",
@@ -118,7 +104,6 @@ func setupServerAndRun() {
 	}
 	routecomments = append(routecomments, routecomment)
 
-	go serverlocal.ListenAndServe()
 	server.ListenAndServe()
 }
 
