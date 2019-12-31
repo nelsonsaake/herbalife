@@ -1,0 +1,17 @@
+{
+	"ImportPath": "projects/Herbalife/src",
+	"GoVersion": "go1.11",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/mattn/go-sqlite3",
+			"Comment": "v1.10.0-37-g4cb3725",
+			"Rev": "4cb37250b60d3254997cc8b53d9951278bdf3059"
+		},
+		{
+			"ImportPath": "github.com/rs/cors",
+			"Comment": "v1.6.0-2-g76f58f3",
+			"Rev": "76f58f330d76a55c5badc74f6212e8a15e742c77"
+		}
+	]
+}
