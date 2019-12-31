@@ -1,0 +1,30 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Herbalife</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/bsjq/bootstrap.min.css">
+    <script src="/public/bsjq/bootstrap.min.js"></script>
+    <script src="/public/bsjq/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/css/main.css">
+    <script src="/public/js/main.js"></script>
+</head>
+
+<body>
+    <div class="header">
+      {{ template "links" .}}
+    </div>
+    <div class="container" id="top">
+        {{ template "layoutcontent" .}}
+    </div>
+    <div class="footer">
+        ghuywithissues@gmail.com
+    </div>
+</body>
+
+</html>
+
+{{ end }}
