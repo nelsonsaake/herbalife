@@ -10,6 +10,7 @@ type Product struct {
 	VolumePoints float64
 	EarnBase     float64
 	RetailPrice  float64
+	CommonName   string
 	ProductType  ProductType
 }
 

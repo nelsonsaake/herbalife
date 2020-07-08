@@ -1,0 +1,27 @@
+{{ define "packageimgview" }}
+
+{{.Len}} Pack <br>
+
+        {{range .Products}}
+        <div class="img-wrapper">
+            <img src="" alt="image of  {{.ProductName}}">
+            <div class="product-tag">
+                <div class="product-name">
+                    {{.ProductName}}
+                </div>
+                <div class="price">
+                    GHC{{.SuggestedSellingPrice}}
+                </div>
+            </div>
+        </div>
+        {{end}}
+
+        <div class="total-price-wrapper">
+            Total
+            <div class="total-wrapper">
+                {{.TotalSellingPrice}}
+            </div>
+        </div>
+
+
+{{ end }}

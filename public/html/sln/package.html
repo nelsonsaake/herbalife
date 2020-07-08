@@ -1,0 +1,32 @@
+{{ define "package" }}
+
+Pack
+
+<div class="full table-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>Products</th>
+                <th>Price </th>
+            </tr>
+        </thead>
+
+        {{range .Products}}
+        <tbody>
+            <tr>
+                <td>{{.ProductName}}</td>
+                <td>GHC{{.SuggestedSellingPrice}}</td>
+            </tr>
+        </tbody>
+        {{end}}
+
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>{{.TotalSellingPrice}}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+{{ end }}

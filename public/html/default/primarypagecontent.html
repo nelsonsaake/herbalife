@@ -1,14 +1,6 @@
 {{ define "pagecontent"}}
 
-<form action="/search" method="GET">
-    <div class="input-wrapper searcharea"> 
-        <input type="search" name="search" id="search"
-        ><button type="submit">
-            <span class="glyphicon glyphicon-search"></span>
-            Search
-        </button>    
-    </div>
-</form>
+{{ template "searcharea" .}}
 
 <div class="full table-wrapper">
     <table>

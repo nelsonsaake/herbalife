@@ -1,0 +1,9 @@
+[]int{1, 9, 16, 24} Muscle/Weight Gain
+[]int{1, 26, 12, 10, 17} Weight Loss / Flat Tummy
+[]int{30, 29, 33} Skin Care
+[]int{31, 32} Hair Care
+[]int{31, 32, 29} Hair Care
+
+create enum to represent the products its self 
+so that creating the package will not look like a bunch of numbers
+

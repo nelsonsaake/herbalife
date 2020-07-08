@@ -1,0 +1,13 @@
+{{ define "layoutcontent" }}
+
+{{ range $key, $value := .Packages}}
+
+<div class="page package-page" id="id{{ $key }}">
+    
+    {{ template "packageimgview" $value }}
+
+</div>
+
+{{ end }}
+
+{{ end }}

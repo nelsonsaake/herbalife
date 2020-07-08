@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
-	"os"
 
 	"github.com/rs/cors"
 )
@@ -34,16 +33,16 @@ func init() {
 	}
 }
 
-func writeHtmlProductResponse(products []Product, writer http.ResponseWriter) {
+func productResponseWriter(products []Product, writer http.ResponseWriter) {
 
 	tmplFiles := []string{
-		"./public/html/layout.html",
-		"./public/html/layoutcontent.html",
-		"./public/html/headerpage.html",
-		"./public/html/links.html",
-		"./public/html/page.html",
-		"./public/html/searcharea.html",
-		"./public/html/primarypagecontent.html",
+		"./public/html/default/layout.html",
+		"./public/html/default/layoutcontent.html",
+		"./public/html/default/headerpage.html",
+		"./public/html/default/links.html",
+		"./public/html/default/page.html",
+		"./public/html/default/searcharea.html",
+		"./public/html/default/primarypagecontent.html",
 	}
 
 	t, err := template.ParseFiles(tmplFiles...)
@@ -66,7 +65,7 @@ func allProducts(writer http.ResponseWriter, request *http.Request) {
 		panic(err)
 	}
 
-	writeHtmlProductResponse(products, writer)
+	productResponseWriter(products, writer)
 }
 
 func search(writer http.ResponseWriter, request *http.Request) {
@@ -78,7 +77,31 @@ func search(writer http.ResponseWriter, request *http.Request) {
 		panic(err)
 	}
 
-	writeHtmlProductResponse(products, writer)
+	productResponseWriter(products, writer)
+}
+
+func solutionResponseWriter(sln Solution, writer http.ResponseWriter) {
+
+	tmplFiles := []string{
+		"./public/html/default/layout.html",
+		"./public/html/sln/links.html",
+		"./public/html/sln/layoutcontent.html",
+		"./public/html/sln/package.html",
+		"./public/html/sln/packageimgview.html",
+	}
+
+	t, err := template.ParseFiles(tmplFiles...)
+	if err != nil {
+		panic(err)
+	}
+
+	t.ExecuteTemplate(writer, "layout", sln)
+}
+
+func weigthGain(writer http.ResponseWriter, request *http.Request) {
+
+	sln := weightGainSolution()
+	solutionResponseWriter(sln, writer)
 }
 
 func Run() {
@@ -86,8 +109,8 @@ func Run() {
 
 	port := ":8085"
 	server := http.Server{
-		Addr: ":" + os.Getenv("PORT"),
-		// Addr: port,
+		// Addr: ":" + os.Getenv("PORT"),
+		Addr: port,
 	}
 	fmt.Println("Serving at port ", port)
 
@@ -97,6 +120,7 @@ func Run() {
 	http.Handle("/public/", http.StripPrefix("/public/", public))
 	http.Handle("/", c.Handler(http.HandlerFunc(allProducts)))
 	http.Handle("/search", c.Handler(http.HandlerFunc(search)))
+	http.Handle("/wg", c.Handler(http.HandlerFunc(weigthGain)))
 
 	server.ListenAndServe()
 }

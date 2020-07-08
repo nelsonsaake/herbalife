@@ -1,0 +1,9 @@
+{{define "links"}}
+
+{{ range $key, $value := .Packages}}
+
+    <a href="#id{{ $key }}"> {{.Len}} Pack </a>
+
+{{ end }}
+
+{{end}}
